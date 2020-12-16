@@ -40,3 +40,13 @@ http://127.0.0.1:8000/api/person/61  # PUT Update Person details
 http://127.0.0.1:8000/api/person/61 # DELETE delete Person details
 
 ```
+
+### Version API
+
+```php
+http://127.0.0.1:8000/api/v1/person/2
+```
+
+```php
+http://127.0.0.1:8000/api/v2/person/2
+```
