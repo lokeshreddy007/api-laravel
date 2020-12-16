@@ -29,4 +29,17 @@ class PersonController extends Controller
     {
         return new PersonResourceCollection(Person::paginate());
     }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+            'city' => 'required',
+            'phone' => 'required',
+        ]);
+        $person = Person::create($request->all());
+        return new PersonResource($person);
+    }
 }
