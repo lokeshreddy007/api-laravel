@@ -49,6 +49,13 @@ class PersonController extends Controller
         return new PersonResource($person);
     }
 
+    /**
+     * Update Person
+     *
+     * @param Request $request
+     * @param Person $person
+     * @return PersonResource
+     */
     public function update(Request $request, Person $person): PersonResource
     {
         $request->validate([
@@ -60,5 +67,17 @@ class PersonController extends Controller
         ]);
         $person->update($request->all());
         return new PersonResource($person);
+    }
+
+    /**
+     * Delete the Person
+     *
+     * @param Person $person
+     * @return string
+     */
+    public function destroy(Person $person)
+    {
+        $person->delete();
+        return response()->json();
     }
 }
