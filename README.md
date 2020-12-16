@@ -8,6 +8,14 @@ php artisan make:Model Person -mf // add model adn factory
 php artisan make:seed PersonTableSeeder
 ```
 
+```php
+php artisan make:resource PersonResource
+```
+
+```php
+php artisan make:resource PersonResourceCollection --collection
+```
+
 #### API links
 
 ```php
