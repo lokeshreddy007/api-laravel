@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
+use App\Models\Person;
 
-Route::get('/person', function () {
-    $person = [1, 2, 3];
+Route::get('/person/{person}', function (Person $person) {
     return $person;
 });
