@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\PersonController;
+use App\Http\Controllers\Api\v1\PersonController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 /*
@@ -19,4 +19,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::apiResource('/person', PersonController::class);
+
+Route::prefix('v1')->group(function () {
+    Route::apiResource('/person', PersonController::class);
+});
