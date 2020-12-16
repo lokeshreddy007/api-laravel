@@ -30,6 +30,12 @@ class PersonController extends Controller
         return new PersonResourceCollection(Person::paginate());
     }
 
+    /**
+     * Add Person 
+     *
+     * @param Request $request
+     * @return PersonResource
+     */
     public function store(Request $request)
     {
         $request->validate([
@@ -40,6 +46,19 @@ class PersonController extends Controller
             'phone' => 'required',
         ]);
         $person = Person::create($request->all());
+        return new PersonResource($person);
+    }
+
+    public function update(Request $request, Person $person): PersonResource
+    {
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+            'city' => 'required',
+            'phone' => 'required',
+        ]);
+        $person->update($request->all());
         return new PersonResource($person);
     }
 }
