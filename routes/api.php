@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\PersonController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,8 +18,5 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-use App\Models\Person;
 
-Route::get('/person/{person}', function (Person $person) {
-    return $person;
-});
+Route::apiResource('/person', PersonController::class);
