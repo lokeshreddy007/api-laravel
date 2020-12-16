@@ -1,4 +1,4 @@
-# Laravel API
+# Laravel 8 API
 
 ```php
 php artisan make:Model Person -mf // add model adn factory
@@ -10,27 +10,25 @@ php artisan make:seed PersonTableSeeder
 
 #### API links
 
-``php
+```php
 http://127.0.0.1:8000/api/person # Get all Person details
 
 ```
 
-``php
+```php
 http://127.0.0.1:8000/api/person/61  # Get One Person details
 ```
 
-``php
+```php
 http://127.0.0.1:8000/api/person # POST Add Person details
 
 ```
 
-``php
+```php
 http://127.0.0.1:8000/api/person/61  # PUT Update Person details
 ```
 
-``php
+```php
 http://127.0.0.1:8000/api/person/61 # DELETE delete Person details
-
-```
 
 ```
